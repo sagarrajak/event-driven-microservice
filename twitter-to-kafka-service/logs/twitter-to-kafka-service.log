@@ -81,3 +81,33 @@ Consider defining a bean of type 'com.microservice.demo.twitter.to.kafka.listene
 2024-06-03 14:06:58 [pool-1-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text consectetuer libero massa nextjs lectus ultricies
 2024-06-03 14:07:08 [pool-1-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text sed posuere magna sed java Maecenas malesuada Maecenas
 2024-06-03 14:07:18 [pool-1-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text porttitor Maecenas libero Fusce massa amet microservices congue elit malesuada malesuada
+2024-06-03 15:43:30 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 176590 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-03 15:43:30 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-03 15:43:30 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twiiterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.microservice.demo.config.TwitterToKafkaConfigData' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-06-03 15:43:30 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-03 15:43:30 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.microservice.demo.twitter.to.kafka.TwiiterToKafkaServiceApplication required a bean of type 'com.microservice.demo.config.TwitterToKafkaConfigData' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.microservice.demo.config.TwitterToKafkaConfigData' in your configuration.
+
+2024-06-03 15:44:14 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 176725 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-03 15:44:14 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-03 15:44:15 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Started TwiiterToKafkaServiceApplication in 1.194 seconds (process running for 1.86)
+2024-06-03 15:44:15 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - [java, microservices, nextjs, react, reactjs, typescript, golang, go]
+2024-06-03 15:44:15 [main] INFO  c.m.d.t.t.k.r.i.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [java, microservices, nextjs, react, reactjs, typescript, golang, go]
+2024-06-03 15:44:15 [pool-1-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text adipiscing lectus sed lectus libero react malesuada elit elit sit
+2024-06-03 15:44:25 [pool-1-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text adipiscing purus dolor ultricies malesuada nextjs porttitor porttitor magna
+2024-06-03 15:44:31 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 176843 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-03 15:44:31 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
