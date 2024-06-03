@@ -1,0 +1,11 @@
+twitter-to-kafka-service:
+  twitter-keywords:
+    - java
+    - microservices
+    - nextjs
+    - react
+    - reactjs
+    - typescript
+    - golang
+    - go
+  mock-sleep-ms: 10000
