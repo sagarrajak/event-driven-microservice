@@ -111,3 +111,9 @@ Consider defining a bean of type 'com.microservice.demo.config.TwitterToKafkaCon
 2024-06-03 15:44:25 [pool-1-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text adipiscing purus dolor ultricies malesuada nextjs porttitor porttitor magna
 2024-06-03 15:44:31 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 176843 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
 2024-06-03 15:44:31 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-03 19:35:59 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 198918 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-03 19:35:59 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-03 19:36:00 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Started TwiiterToKafkaServiceApplication in 1.273 seconds (process running for 1.961)
+2024-06-03 19:36:00 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - [java, microservices, nextjs, react, reactjs, typescript, golang, go]
+2024-06-03 19:36:00 [main] INFO  c.m.d.t.t.k.r.i.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [java, microservices, nextjs, react, reactjs, typescript, golang, go]
+2024-06-03 19:36:00 [pool-1-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text Lorem sed sed pulvinar microservices purus elit ipsum
