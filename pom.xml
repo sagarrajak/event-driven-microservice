@@ -29,14 +29,29 @@
 		<avro.version>1.11.3</avro.version>
 		<spring-kafka.version>3.2.0</spring-kafka.version>
 		<spring-retry.version>2.0.6</spring-retry.version>
+		<spring-project-version>0.0.1</spring-project-version>
+		<spring-boot-webflux.version>3.2.1</spring-boot-webflux.version>
+		<kafka-avro-serizer.version>7.6.0</kafka-avro-serizer.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+			<!-- Local -->
+			<dependency>
+				<groupId>com.microservice.demo</groupId>
+				<artifactId>common-config</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.microservice.demo</groupId>
 				<artifactId>app-config-data</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.microservice.demo</groupId>
+				<artifactId>kafka-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<!--Other-->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter</artifactId>
@@ -79,6 +94,17 @@
 				<artifactId>spring-boot-starter-aop</artifactId>
 				<version>${spring-boot.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-webflux</artifactId>
+				<version>${spring-boot-webflux.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.confluent</groupId>
+				<artifactId>kafka-avro-serializer</artifactId>
+				<version>7.6.0</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 	<build>
