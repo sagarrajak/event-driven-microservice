@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.3.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.microservice.demo</groupId>
 	<artifactId>microservice-demo</artifactId>
@@ -15,7 +16,7 @@
 	<description>Demo project for Spring Boot</description>
 	<modules>
 		<module>twitter-to-kafka-service</module>
-        <module>app-config-data</module>
+		<module>app-config-data</module>
 		<module>kafka</module>
 		<module>common-config</module>
 	</modules>
@@ -49,6 +50,16 @@
 			<dependency>
 				<groupId>com.microservice.demo</groupId>
 				<artifactId>kafka-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservice.demo</groupId>
+				<artifactId>kafka-admin</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservice.demo</groupId>
+				<artifactId>kafka-producer</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<!--Other-->
@@ -127,4 +138,10 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<repositories>
+		<repository>
+			<id>confluent</id>
+			<url>https://packages.confluent.io/maven/</url>
+		</repository>
+	</repositories>
 </project>

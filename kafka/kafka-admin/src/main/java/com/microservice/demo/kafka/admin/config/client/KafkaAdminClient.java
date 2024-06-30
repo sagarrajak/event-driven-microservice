@@ -52,7 +52,7 @@ public class KafkaAdminClient {
         return this.adminClient.createTopics(kafkaTopics);
     }
 
-    private void checkSchemaRegistryUpAndRunning() {
+    public void checkSchemaRegistryUpAndRunning() {
         try {
             this.retryTemplate.execute(this::doCheckSchemaRegistory);
         } catch (RuntimeException e) {

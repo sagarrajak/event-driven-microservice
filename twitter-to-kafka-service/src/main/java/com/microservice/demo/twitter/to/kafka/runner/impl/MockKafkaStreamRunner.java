@@ -11,6 +11,7 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterObjectFactory;
 import twitter4j.v1.Status;
 
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -98,7 +99,7 @@ public class MockKafkaStreamRunner implements StreamRunner {
 
     private String getFormattedTweet(String[] keywords) {
         String[] params = new String[]{
-                ZonedDateTime.now().format(DateTimeFormatter.ofPattern(TWITTER_STATUS_DATE_FORMAT, Locale.ENGLISH)),
+                ZonedDateTime.now(ZoneId.of("UTC")).format(DateTimeFormatter.ofPattern(TWITTER_STATUS_DATE_FORMAT, Locale.ENGLISH)),
                 String.valueOf(ThreadLocalRandom.current().nextLong(Long.MAX_VALUE)),
                 getRandomTweetContent(keywords),
                 String.valueOf(ThreadLocalRandom.current().nextLong(Long.MAX_VALUE))
