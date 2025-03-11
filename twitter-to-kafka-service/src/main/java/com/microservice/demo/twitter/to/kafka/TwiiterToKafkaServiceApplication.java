@@ -24,7 +24,7 @@ public class TwiiterToKafkaServiceApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        streamInitializer.init(); // start the kafka
         streamRunner.start();
-        streamInitializer.init();
     }
 }

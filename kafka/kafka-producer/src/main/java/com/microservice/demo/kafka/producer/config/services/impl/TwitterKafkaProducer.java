@@ -30,6 +30,10 @@ public class TwitterKafkaProducer implements KafkaProducers<Long, TwitterAvroMod
         CompletableFuture<SendResult<Long, TwitterAvroModel>> kafkaResultFuture =
                 this.kafkaTemplate.send(topicName, key, message);
         kafkaResultFuture.whenComplete((sendResult, exception) -> {
+            if (exception != null) {
+                log.error("Send failed", exception);
+                return;
+            }
             ProducerRecord<Long, TwitterAvroModel> producerRecord = sendResult.getProducerRecord();
             log.debug("Received new metadata, Topic: {}, Partition: {}, offset: {}, Timestamp: {}, and time {}",
                         producerRecord.topic(),

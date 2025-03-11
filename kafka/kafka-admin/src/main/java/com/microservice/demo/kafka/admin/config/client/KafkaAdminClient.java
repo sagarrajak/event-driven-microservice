@@ -48,7 +48,8 @@ public class KafkaAdminClient {
         List<NewTopic> kafkaTopics = topicNameToCreate.stream().map(name -> new NewTopic(
                 name.trim(),
                 this.kafkaConfigData.getNumberOfPartitions(),
-                this.kafkaConfigData.getReplicationFactor())).collect(Collectors.toList());
+                this.kafkaConfigData.getReplicationFactor()))
+            .collect(Collectors.toList());
         return this.adminClient.createTopics(kafkaTopics);
     }
 

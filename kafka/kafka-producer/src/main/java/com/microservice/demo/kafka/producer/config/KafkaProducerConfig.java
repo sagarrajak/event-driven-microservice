@@ -31,15 +31,27 @@ public class KafkaProducerConfig<K extends Serializable, V extends SpecificRecor
 	@Bean
 	Map<String, Object> producerConfig() {
 		Map<String, Object> props = new HashMap<>();
-		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, this.kafkaConfigData.getBootstrapServer());
-		props.put(ProducerConfig.ACKS_CONFIG, this.producerConfigData.getAsks());
-		props.put(ProducerConfig.BATCH_SIZE_CONFIG, this.producerConfigData.getBatchSize());
-		props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, this.producerConfigData.getKeySerializerClass());
-		props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, this.producerConfigData.getValueSerializerClass());
-		props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, this.producerConfigData.getCompressionType());
-		props.put(ProducerConfig.LINGER_MS_CONFIG, this.producerConfigData.getLingerMs());
-		props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, this.producerConfigData.getRequestTimeoutMs());
-		props.put(ProducerConfig.RETRIES_CONFIG, this.producerConfigData.getRetryCount());
+//		props.put(kafkaConfigData.getSchemaRegistryUrlKey(), kafkaConfigData.getSchemaRegistryUrl());
+//		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, this.kafkaConfigData.getBootstrapServer());
+//		props.put(ProducerConfig.ACKS_CONFIG, this.producerConfigData.getAsks());
+//		props.put(ProducerConfig.BATCH_SIZE_CONFIG, this.producerConfigData.getBatchSize());
+//		props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, this.producerConfigData.getKeySerializerClass());
+//		props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, this.producerConfigData.getValueSerializerClass());
+//		props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, this.producerConfigData.getCompressionType());
+//		props.put(ProducerConfig.LINGER_MS_CONFIG, this.producerConfigData.getLingerMs());
+//		props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, this.producerConfigData.getRequestTimeoutMs());
+//		props.put(ProducerConfig.RETRIES_CONFIG, this.producerConfigData.getRetryCount());
+		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaConfigData.getBootstrapServer());
+		props.put(kafkaConfigData.getSchemaRegistryUrlKey(), kafkaConfigData.getSchemaRegistryUrl());
+		props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, producerConfigData.getKeySerializerClass());
+		props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, producerConfigData.getValueSerializerClass());
+		props.put(ProducerConfig.BATCH_SIZE_CONFIG, producerConfigData.getBatchSize() *
+				producerConfigData.getBatchSizeBoostFactor());
+		props.put(ProducerConfig.LINGER_MS_CONFIG, producerConfigData.getLingerMs());
+		props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, producerConfigData.getCompressionType());
+		props.put(ProducerConfig.ACKS_CONFIG, producerConfigData.getAcks());
+		props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, producerConfigData.getRequestTimeoutMs());
+		props.put(ProducerConfig.RETRIES_CONFIG, producerConfigData.getRetryCount());
 		return props;
 	}
 

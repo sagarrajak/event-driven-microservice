@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import twitter4j.v1.Status;
 import twitter4j.v1.StatusAdapter;
 
+import java.util.concurrent.ExecutionException;
+
 @Component
 @Slf4j
 public class TwitterKafkaStatusListener extends StatusAdapter {
@@ -30,6 +32,11 @@ public class TwitterKafkaStatusListener extends StatusAdapter {
     public void onStatus(Status status) {
         log.info("Twitter status with text {} sending to kafka topic {}", status.getText(), kafkaConfigData.getTopicName());
         TwitterAvroModel twitterAvroModel = this.twitterStatusToAvroTransformer.getTwitterAvroModelFromStatus(status);
-        this.kafkaProducers.send(kafkaConfigData.getTopicName(), twitterAvroModel.getUserId(), twitterAvroModel);
+        try {
+            this.kafkaProducers.send(kafkaConfigData.getTopicName(), twitterAvroModel.getUserId(), twitterAvroModel);
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        log.info("Twitter status with text {} send to kafka topic {}", status.getText(), kafkaConfigData.getTopicName());
     }
 }

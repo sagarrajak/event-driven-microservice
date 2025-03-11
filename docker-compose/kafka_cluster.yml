@@ -14,6 +14,62 @@ services:
       ZOOKEEPER_SERVERS: zookeeper:2888:3888
     networks:
       - ${GLOBAL_NETWORK:-kafka}
+    ulimits: # Add ulimits section here for kafka1
+      nofile: 65535
+  kafka-broker-1:
+    image: confluentinc/cp-kafka:${KAFKA_VERSION}
+    hostname: kafka-broker-1
+    ports:
+      - "19092:19092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-1:9092,LISTENER_LOCAL://localhost:19092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_COMPRESSION_TYPE: producer
+    networks:
+      - ${GLOBAL_NETWORK:-kafka}
+    ulimits: # Add ulimits section here for kafka1
+      nofile: 65535
+  kafka-broker-2:
+    image: confluentinc/cp-kafka:${KAFKA_VERSION}
+    hostname: kafka-broker-2
+    ports:
+      - "29092:29092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-2:9092,LISTENER_LOCAL://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_COMPRESSION_TYPE: producer
+    networks:
+      - ${GLOBAL_NETWORK:-kafka}
+    ulimits: # Add ulimits section here for kafka1
+      nofile: 65535
+  kafka-broker-3:
+    image: confluentinc/cp-kafka:${KAFKA_VERSION}
+    hostname: kafka-broker-3
+    ports:
+      - "39092:39092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-3:9092,LISTENER_LOCAL://localhost:39092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_COMPRESSION_TYPE: producer
+    networks:
+      - ${GLOBAL_NETWORK:-kafka}
+    ulimits: # Add ulimits section here for kafka1
+      nofile: 65535
   schema-registry:
     image: confluentinc/cp-schema-registry:${KAFKA_VERSION}
     hostname: schema-registry
@@ -31,51 +87,26 @@ services:
       SCHEMA_REGISTRY_DEBUG: 'true'
     networks:
       - ${GLOBAL_NETWORK:-kafka}
-  kafka-broker-1:
-    image: confluentinc/cp-kafka:${KAFKA_VERSION}
-    hostname: kafka-broker-1
-    ports:
-      - "19092:19092"
+    ulimits: # Add ulimits section here for kafka1
+      nofile: 65535
+  control-center:
+    image: confluentinc/cp-enterprise-control-center:${KAFKA_VERSION}
+    hostname: control-center
     depends_on:
       - zookeeper
-    environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-1:9092,LISTENER_LOCAL://localhost:19092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-      KAFKA_COMPRESSION_TYPE: producer
-    networks:
-      - ${GLOBAL_NETWORK:-kafka}
-  kafka-broker-2:
-    image: confluentinc/cp-kafka:${KAFKA_VERSION}
-    hostname: kafka-broker-2
+      - kafka-broker-1
+      - kafka-broker-2
+      - kafka-broker-3
+      - schema-registry
     ports:
-      - "29092:29092"
-    depends_on:
-      - zookeeper
+      - "9021:9021"
     environment:
-      KAFKA_BROKER_ID: 2
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-2:9092,LISTENER_LOCAL://localhost:29092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-      KAFKA_COMPRESSION_TYPE: producer
+      CONTROL_CENTER_BOOTSTRAP_SERVERS: "kafka-broker-1:9092,kafka-broker-2:9092,kafka-broker-3:9092"
+      CONTROL_CENTER_ZOOKEEPER_CONNECT: "zookeeper:2181"
+      CONTROL_CENTER_SCHEMA_REGISTRY_URL: "http://schema-registry:8081"
+      CONTROL_CENTER_REPLICATION_FACTOR: 1
+      PORT: 9021
     networks:
       - ${GLOBAL_NETWORK:-kafka}
-  kafka-broker-3:
-    image: confluentinc/cp-kafka:${KAFKA_VERSION}
-    hostname: kafka-broker-3
-    ports:
-      - "39092:39092"
-    depends_on:
-      - zookeeper
-    environment:
-      KAFKA_BROKER_ID: 3
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-3:9092,LISTENER_LOCAL://localhost:39092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-      KAFKA_COMPRESSION_TYPE: producer
-    networks:
-      - ${GLOBAL_NETWORK:-kafka}
+    ulimits: # Add ulimits section here for kafka1
+      nofile: 65535

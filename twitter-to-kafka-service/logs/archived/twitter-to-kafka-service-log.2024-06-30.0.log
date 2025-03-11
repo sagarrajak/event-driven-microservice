@@ -1,0 +1,381 @@
+2024-06-30 21:02:40 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 573275 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-30 21:02:40 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-30 21:02:41 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twiiterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'impl.services.com.microservice.demo.kafka.producer.config.TwitterKafkaProducer' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-06-30 21:02:41 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-30 21:02:41 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservice.demo.twitter.to.kafka.listener.TwitterKafkaStatusListener required a bean of type 'impl.services.com.microservice.demo.kafka.producer.config.TwitterKafkaProducer' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'impl.services.com.microservice.demo.kafka.producer.config.TwitterKafkaProducer' in your configuration.
+
+2024-06-30 21:08:04 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 573702 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-30 21:08:04 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-30 21:08:05 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twiiterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers<java.lang.Long, com.microservice.demo.kafka.avro.model.TwitterAvroModel>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-06-30 21:08:05 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-30 21:08:05 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservice.demo.twitter.to.kafka.listener.TwitterKafkaStatusListener required a bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers' in your configuration.
+
+2024-06-30 21:10:09 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 573977 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-30 21:10:09 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-30 21:10:10 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twiiterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers<java.lang.Long, com.microservice.demo.kafka.avro.model.TwitterAvroModel>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-06-30 21:10:10 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-30 21:10:10 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservice.demo.twitter.to.kafka.listener.TwitterKafkaStatusListener required a bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers' in your configuration.
+
+2024-06-30 21:11:19 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 574127 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-30 21:11:19 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-30 21:11:20 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twiiterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers<java.lang.Long, com.microservice.demo.kafka.avro.model.TwitterAvroModel>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-06-30 21:11:20 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-30 21:11:20 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservice.demo.twitter.to.kafka.listener.TwitterKafkaStatusListener required a bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers' in your configuration.
+
+2024-06-30 21:12:35 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 574283 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-30 21:12:35 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-30 21:12:36 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twiiterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes/com/microservice/demo/twitter/to/kafka/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers<java.lang.Long, com.microservice.demo.kafka.avro.model.TwitterAvroModel>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-06-30 21:12:36 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-30 21:12:36 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservice.demo.twitter.to.kafka.listener.TwitterKafkaStatusListener required a bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'services.com.microservice.demo.kafka.producer.config.KafkaProducers' in your configuration.
+
+2024-06-30 21:13:49 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 574523 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-30 21:13:49 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-30 21:13:51 [main] INFO  c.m.d.k.p.config.KafkaProducerConfig - Init kafka producer config
+2024-06-30 21:13:51 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Init kafka producer template
+2024-06-30 21:13:51 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2024-06-30 21:13:51 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.0
+2024-06-30 21:13:51 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 2ae524ed625438c5
+2024-06-30 21:13:51 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1719762231324
+2024-06-30 21:13:52 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
+2024-06-30 21:13:52 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Started TwiiterToKafkaServiceApplication in 2.809 seconds (process running for 3.48)
+2024-06-30 21:13:52 [main] INFO  c.m.d.t.t.k.r.i.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [java, microservices, nextjs, react, reactjs, typescript, golang, go]
+2024-06-30 21:13:52 [pool-3-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text ultricies sed dolor libero adipiscing nextjs Maecenas porttitor massa sending to kafka topic twitter-topic
+2024-06-30 21:13:52 [pool-3-thread-1] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message = 'twitter-topic' to topic='{"userId": 6384542437059679221, "id": 4537835761472831823, "text": "ultricies sed dolor libero adipiscing nextjs Maecenas porttitor massa", "createdAt": 1719762232000}'
+2024-06-30 21:13:52 [main] INFO  c.m.d.t.t.k.i.i.KafkaStreamInitializer - topics with name [twitter-topic] is ready for operations
+2024-06-30 21:14:20 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2024-06-30 21:14:20 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-06-30 21:14:20 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-06-30 21:14:20 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-06-30 21:14:20 [SpringApplicationShutdownHook] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Closing kafka producer
+2024-06-30 21:14:52 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 574743 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-30 21:14:52 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-30 21:14:53 [main] INFO  c.m.d.k.p.config.KafkaProducerConfig - Init kafka producer config
+2024-06-30 21:14:53 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Init kafka producer template
+2024-06-30 21:14:53 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2024-06-30 21:14:53 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.0
+2024-06-30 21:14:53 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 2ae524ed625438c5
+2024-06-30 21:14:53 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1719762293887
+2024-06-30 21:14:54 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
+2024-06-30 21:14:54 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Started TwiiterToKafkaServiceApplication in 2.767 seconds (process running for 3.425)
+2024-06-30 21:14:54 [main] INFO  c.m.d.t.t.k.r.i.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [java, microservices, nextjs, react, reactjs, typescript, golang, go]
+2024-06-30 21:14:54 [pool-3-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text purus malesuada elit malesuada react porttitor sed elit sending to kafka topic twitter-topic
+2024-06-30 21:14:54 [pool-3-thread-1] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message = 'twitter-topic' to topic='{"userId": 4897053643154757541, "id": 9065174363224737623, "text": "purus malesuada elit malesuada react porttitor sed elit", "createdAt": 1719762294000}'
+2024-06-30 21:14:54 [main] INFO  c.m.d.t.t.k.i.i.KafkaStreamInitializer - topics with name [twitter-topic] is ready for operations
+2024-06-30 21:15:26 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2024-06-30 21:15:26 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-06-30 21:15:26 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-06-30 21:15:26 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-06-30 21:15:26 [SpringApplicationShutdownHook] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Closing kafka producer
+2024-06-30 21:15:28 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Starting TwiiterToKafkaServiceApplication using Java 22.0.1 with PID 574897 (/home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2024-06-30 21:15:28 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-30 21:15:30 [main] INFO  c.m.d.k.p.config.KafkaProducerConfig - Init kafka producer config
+2024-06-30 21:15:30 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Init kafka producer template
+2024-06-30 21:15:30 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2024-06-30 21:15:30 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.0
+2024-06-30 21:15:30 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 2ae524ed625438c5
+2024-06-30 21:15:30 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1719762330402
+2024-06-30 21:15:31 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
+2024-06-30 21:15:31 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - Started TwiiterToKafkaServiceApplication in 2.804 seconds (process running for 3.485)
+2024-06-30 21:15:31 [main] INFO  c.m.d.t.t.k.r.i.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [java, microservices, nextjs, react, reactjs, typescript, golang, go]
+2024-06-30 21:15:31 [pool-3-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text ultricies malesuada magna Lorem consectetuer lectus reactjs porttitor consectetuer ultricies Maecenas sending to kafka topic twitter-topic
+2024-06-30 21:15:31 [pool-3-thread-1] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message = 'twitter-topic' to topic='{"userId": 5273275902761325022, "id": 6495903227897599988, "text": "ultricies malesuada magna Lorem consectetuer lectus reactjs porttitor consectetuer ultricies Maecenas", "createdAt": 1719762331000}'
+2024-06-30 21:15:31 [main] INFO  c.m.d.t.t.k.i.i.KafkaStreamInitializer - topics with name [twitter-topic] is ready for operations
+2024-06-30 21:18:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2024-06-30 21:18:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-06-30 21:18:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-06-30 21:18:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-06-30 21:18:38 [SpringApplicationShutdownHook] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Closing kafka producer

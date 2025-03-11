@@ -8,7 +8,7 @@ twitter-to-kafka-service:
     - typescript
     - golang
     - go
-  mock-sleep-ms: 1000
+  mock-sleep-ms: 3000
 
 retry-config:
   initialInterval: 1000
@@ -29,11 +29,12 @@ kafka-config:
 
 kafka-producer-config:
   key-serializer-class: org.apache.kafka.common.serialization.LongSerializer
-  value-serializer-class: io.confluent.kafka.serialization.KafkaAvroSerializer
+  value-serializer-class: io.confluent.kafka.serializers.KafkaAvroSerializer
   compression-type: snappy
-  asks: all
+  acks: all
   batch-size: 16384
-  batch-size-boot-factor: 100
+  batch-size-boost-factor: 100
   linger-ms: 5
   request-timeout-ms: 60000
   retry-count: 5
+
