@@ -1,8 +1,0 @@
-2024-06-29 15:37:44 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.microservice.demo.twitter.to.kafka.TwiiterToKafkaServiceApplicationTest]: TwiiterToKafkaServiceApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-06-29 15:37:44 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.microservice.demo.twitter.to.kafka.TwiiterToKafkaServiceApplication for test class com.microservice.demo.twitter.to.kafka.TwiiterToKafkaServiceApplicationTest
-2024-06-29 15:37:44 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplicationTest - Starting TwiiterToKafkaServiceApplicationTest using Java 21.0.3 with PID 520092 (started by sagar in /home/sagar/codingworks/javaspring/microservice-demo/twitter-to-kafka-service)
-2024-06-29 15:37:44 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
-2024-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplicationTest - Started TwiiterToKafkaServiceApplicationTest in 0.869 seconds (process running for 1.934)
-2024-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.TwiiterToKafkaServiceApplication - [java, microservices, nextjs, react, reactjs, typescript, golang, go]
-2024-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.r.i.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [java, microservices, nextjs, react, reactjs, typescript, golang, go]
-2024-06-29 15:37:45 [pool-2-thread-1] INFO  c.m.d.t.t.k.l.TwitterKafkaStatusListener - Twitter status with text pulvinar magna ipsum sed magna golang libero posuere purus
