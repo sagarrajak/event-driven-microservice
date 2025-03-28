@@ -5140,3 +5140,105 @@ org.eclipse.jgit.api.errors.JGitInternalException: Invalid ref name: refs/remote
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2025-03-28 17:48:05 [http-nio-8888-exec-3] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [/home/sagar/codingworks/javaspring/microservice-demo/config-server-repository/config-client-twitter_to_kafka.yml]' via location 'file:/home/sagar/codingworks/javaspring/microservice-demo/config-server-repository/'
 2025-03-28 17:48:05 [http-nio-8888-exec-3] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [/home/sagar/codingworks/javaspring/microservice-demo/config-server-repository/config-client.yml]' via location 'file:/home/sagar/codingworks/javaspring/microservice-demo/config-server-repository/'
+2025-03-28 18:07:49 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-28 18:07:49 [main] INFO  com.microservice.demo.ConfigServer - Starting ConfigServer using Java 23.0.1 with PID 117883 (/home/sagar/codingworks/javaspring/microservice-demo/config-server/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2025-03-28 18:07:49 [main] INFO  com.microservice.demo.ConfigServer - No active profile set, falling back to 1 default profile: "default"
+2025-03-28 18:07:50 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=2ef10c06-b8af-3a5b-a2d7-8e81686e84b1
+2025-03-28 18:07:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8888 (http)
+2025-03-28 18:07:51 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2025-03-28 18:07:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-28 18:07:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2025-03-28 18:07:51 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-28 18:07:51 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1096 ms
+2025-03-28 18:07:51 [main] DEBUG o.s.c.c.s.s.GitCredentialsProviderFactory - Constructing UsernamePasswordCredentialsProvider for URI 
+2025-03-28 18:07:51 [main] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Error occured cloning to base directory.
+org.eclipse.jgit.api.errors.InvalidRemoteException: Invalid URL 
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:177)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.cloneToBasedir(JGitEnvironmentRepository.java:659)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.initClonedRepository(JGitEnvironmentRepository.java:362)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.afterPropertiesSet(JGitEnvironmentRepository.java:283)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.afterPropertiesSet(MultipleJGitEnvironmentRepository.java:72)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.microservice.demo.ConfigServer.main(ConfigServer.java:11)
+Caused by: java.net.URISyntaxException: Cannot parse Git URI-ish: The uri was empty or null
+	at org.eclipse.jgit.transport.URIish.<init>(URIish.java:181)
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:174)
+	... 22 common frames omitted
+2025-03-28 18:07:51 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invalid URL 
+2025-03-28 18:07:51 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-03-28 18:07:51 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-03-28 18:07:51 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invalid URL 
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.microservice.demo.ConfigServer.main(ConfigServer.java:11)
+Caused by: org.eclipse.jgit.api.errors.InvalidRemoteException: Invalid URL 
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:177)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.cloneToBasedir(JGitEnvironmentRepository.java:659)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.initClonedRepository(JGitEnvironmentRepository.java:362)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.afterPropertiesSet(JGitEnvironmentRepository.java:283)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.afterPropertiesSet(MultipleJGitEnvironmentRepository.java:72)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 16 common frames omitted
+Caused by: java.net.URISyntaxException: Cannot parse Git URI-ish: The uri was empty or null
+	at org.eclipse.jgit.transport.URIish.<init>(URIish.java:181)
+	at org.eclipse.jgit.api.CloneCommand.call(CloneCommand.java:174)
+	... 22 common frames omitted
+2025-03-28 18:08:25 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-28 18:08:26 [main] INFO  com.microservice.demo.ConfigServer - Starting ConfigServer using Java 23.0.1 with PID 119164 (/home/sagar/codingworks/javaspring/microservice-demo/config-server/target/classes started by sagar in /home/sagar/codingworks/javaspring/microservice-demo)
+2025-03-28 18:08:26 [main] INFO  com.microservice.demo.ConfigServer - No active profile set, falling back to 1 default profile: "default"
+2025-03-28 18:08:26 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=2ef10c06-b8af-3a5b-a2d7-8e81686e84b1
+2025-03-28 18:08:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8888 (http)
+2025-03-28 18:08:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2025-03-28 18:08:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-28 18:08:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2025-03-28 18:08:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-28 18:08:26 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 844 ms
+2025-03-28 18:08:27 [main] DEBUG o.s.c.c.s.s.GitCredentialsProviderFactory - Constructing UsernamePasswordCredentialsProvider for URI https://github.com/sagarrajak/spring-config-microservice
+2025-03-28 18:08:33 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2025-03-28 18:08:33 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2025-03-28 18:08:33 [main] INFO  com.microservice.demo.ConfigServer - Started ConfigServer in 7.602 seconds (process running for 8.388)
+2025-03-28 18:08:38 [http-nio-8888-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-28 18:08:38 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-28 18:08:38 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-28 18:08:38 [http-nio-8888-exec-1] DEBUG o.s.c.c.s.s.GitCredentialsProviderFactory - Constructing UsernamePasswordCredentialsProvider for URI https://github.com/sagarrajak/spring-config-microservice
+2025-03-28 18:08:40 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [/tmp/config-repo-1946852091712363225/config-client-twitter_to_kafka.yml]' via location 'file:/tmp/config-repo-1946852091712363225/'
+2025-03-28 18:08:40 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [/tmp/config-repo-1946852091712363225/config-client.yml]' via location 'file:/tmp/config-repo-1946852091712363225/'
+2025-03-28 18:11:12 [http-nio-8888-exec-2] DEBUG o.s.c.c.s.s.GitCredentialsProviderFactory - Constructing UsernamePasswordCredentialsProvider for URI https://github.com/sagarrajak/spring-config-microservice
+2025-03-28 18:11:14 [http-nio-8888-exec-2] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [/tmp/config-repo-1946852091712363225/config-client.yml]' via location 'file:/tmp/config-repo-1946852091712363225/'
+2025-03-28 18:11:14 [http-nio-8888-exec-3] DEBUG o.s.c.c.s.s.GitCredentialsProviderFactory - Constructing UsernamePasswordCredentialsProvider for URI https://github.com/sagarrajak/spring-config-microservice
+2025-03-28 18:11:15 [http-nio-8888-exec-3] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [/tmp/config-repo-1946852091712363225/config-client-twitter_to_kafka.yml]' via location 'file:/tmp/config-repo-1946852091712363225/'
+2025-03-28 18:11:15 [http-nio-8888-exec-3] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [/tmp/config-repo-1946852091712363225/config-client.yml]' via location 'file:/tmp/config-repo-1946852091712363225/'

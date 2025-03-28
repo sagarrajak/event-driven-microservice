@@ -12,6 +12,9 @@ spring:
     config:
       server:
         git:
-          uri: file://home/sagar/codingworks/javaspring/microservice-demo/config-server-repository
+          uri: https://github.com/sagarrajak/spring-config-microservice
+#          uri: file://home/sagar/codingworks/javaspring/microservice-demo/config-server-repository
           clone-on-start: true
+          password: ${GITHUB_TOKEN}
+          username: something
       fail-fast: true
