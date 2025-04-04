@@ -6,6 +6,9 @@ import com.microservice.demo.kafka.avro.model.TwitterAvroModel;
 import com.microservice.demo.kafka.to.elastic.service.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.context.event.ApplicationStartedEvent;
+import org.springframework.context.Lifecycle;
+import org.springframework.context.event.EventListener;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.KafkaListenerEndpointRegistry;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -13,8 +16,8 @@ import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
-import java.io.Serializable;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -29,6 +32,14 @@ public class TwitterKafkaConsumer implements KafkaConsumer<Long, TwitterAvroMode
         this.registry = registry;
         this.kafkaAdminClient = kafkaAdminClient;
         this.kafkaConfigData = kafkaConfigData;
+    }
+
+    @EventListener
+    public void onBootstrap(ApplicationStartedEvent event) {
+        kafkaAdminClient.checkTopicCreated();
+        log.info("Topic with name {} is created", kafkaConfigData.getTopicNameToCreate().toString());
+        Optional.ofNullable(this.registry.getListenerContainer("twitterTopicListener"))
+                .ifPresent(Lifecycle::start);
     }
 
     @Override
