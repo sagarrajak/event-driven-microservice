@@ -20,7 +20,8 @@
 		<module>kafka</module>
 		<module>common-config</module>
 		<module>config-server</module>
-	</modules>
+        <module>kafka to elastic service</module>
+    </modules>
 	<packaging>pom</packaging>
 	<properties>
 		<java.version>17</java.version>
