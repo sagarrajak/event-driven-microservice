@@ -110,3 +110,7 @@ services:
       - ${GLOBAL_NETWORK:-kafka}
     ulimits: # Add ulimits section here for kafka1
       nofile: 65535
+
+networks:
+  application:
+    driver: bridge

@@ -36,7 +36,7 @@ public class TwitterKafkaConsumer implements KafkaConsumer<Long, TwitterAvroMode
     public void receive(
             @Payload List<TwitterAvroModel> messages,
             @Header(KafkaHeaders.RECEIVED_KEY) List<Integer> keys,
-            @Header(KafkaHeaders.PARTITION) List<Integer> partitions,
+            @Header(KafkaHeaders.RECEIVED_PARTITION) List<Integer> partitions,
             @Header(KafkaHeaders.OFFSET) List<Long> offsets
     ) {
         log.info("number of messages: {}, keys {}, partition {}, offset {}", messages.size(), keys.toString(), partitions.toString(), offsets.toString());

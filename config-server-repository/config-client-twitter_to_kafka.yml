@@ -41,7 +41,3 @@ kafka-producer-config:
 spring:
   application:
     name: twitter-to-kafka-service
-
-
-server:
-  port: 8181
