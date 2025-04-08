@@ -32,9 +32,9 @@
 			<artifactId>kafka-avro-serializer</artifactId>
 		</dependency>
 		<dependency>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok</artifactId>
-				<scope>provided</scope>
-			</dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>

@@ -36,3 +36,8 @@ kafka-consumer-config:
   max-partition-fetch-bytes-boost-factor: 1
   pool-timeout-ms: 150
 
+elastic-config:
+  index-name: twitter-index
+  connection-url: http://localhost:9200
+  connect-timeout-ms: 5000
+  socket-timeout-ms: 30000
