@@ -1,11 +1,14 @@
 package com.microservice.demo.elastic.config;
 
 import com.microservice.demo.config.ElasticConfigData;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.elasticsearch.client.ClientConfiguration;
 import org.springframework.data.elasticsearch.client.elc.ElasticsearchConfiguration;
+import org.springframework.data.elasticsearch.support.HttpHeaders;
 
+@Slf4j
 @Configuration
 public class ElasticsearchConfig extends ElasticsearchConfiguration {
     private final ElasticConfigData clientConfiguration;
@@ -15,12 +18,20 @@ public class ElasticsearchConfig extends ElasticsearchConfiguration {
     }
 
     @Override
-    @Bean
+    @Bean(name = "elasticsearchClientConfiguration")
     public ClientConfiguration clientConfiguration() {
+        log.info("Elasticsearch Client Configuration, host {}, connect timeout {}, socket timeout {}",
+                this.clientConfiguration.getConnectionUrl(), this.clientConfiguration.getConnectTimeoutMs(), this.clientConfiguration.getSocketTimeoutMs());
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Content-Type", "application/json");
         return ClientConfiguration.builder()
                 .connectedTo(this.clientConfiguration.getConnectionUrl())
                 .withConnectTimeout(this.clientConfiguration.getConnectTimeoutMs())
                 .withSocketTimeout(this.clientConfiguration.getSocketTimeoutMs())
+                .withDefaultHeaders(headers)
                 .build();
     }
+
+
 }

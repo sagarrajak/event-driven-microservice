@@ -39,7 +39,7 @@
 		<spring-boot-webflux.version>3.2.1</spring-boot-webflux.version>
 		<kafka-avro-serizer.version>7.6.0</kafka-avro-serizer.version>
 		<spring-cloud.version>4.2.1</spring-cloud.version>
-		<elasticsearch.version>7.9.1</elasticsearch.version>
+		<elasticsearch.version>8.17.4</elasticsearch.version>
 		<elasticsearch-rest-client.version>7.9.1</elasticsearch-rest-client.version>
 	</properties>
 	<dependencyManagement>
@@ -158,7 +158,7 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-				<version>${spring-boot.version}</version>
+				<version>3.4.4</version>
 			</dependency>
 			<dependency>
 				<groupId>org.elasticsearch</groupId>
