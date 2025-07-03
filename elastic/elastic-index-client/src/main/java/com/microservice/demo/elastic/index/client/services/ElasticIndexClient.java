@@ -7,5 +7,5 @@ import org.springframework.data.elasticsearch.core.query.IndexQuery;
 import java.util.List;
 
 public interface ElasticIndexClient<T extends IndexModel> {
-    List<IndexedObjectInformation> save(List<T> query);
+    List<String> save(List<T> query);
 }

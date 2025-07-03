@@ -69,7 +69,7 @@ public class TwitterKafkaConsumer implements KafkaConsumer<Long, TwitterAvroMode
         elasticModels.forEach(message -> {
             log.info(message.toString());
         });
-        List<IndexedObjectInformation> savedData = this.elasticIndexClient.save(elasticModels);
+        List<String> savedData = this.elasticIndexClient.save(elasticModels);
 //        log.info("Saved data {}", savedData.toString());
 
     }

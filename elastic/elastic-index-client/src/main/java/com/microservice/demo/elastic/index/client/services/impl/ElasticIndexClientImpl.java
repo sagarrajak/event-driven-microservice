@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -32,7 +33,7 @@ public class ElasticIndexClientImpl implements ElasticIndexClient<TwitterIndexMo
     }
 
     @Override
-    public List<IndexedObjectInformation> save(List<TwitterIndexModel> documents) {
+    public List<String> save(List<TwitterIndexModel> documents) {
         List<IndexQuery> indexQuery = elasticIndexUtill.getIndexQuery(documents);
         indexQuery.forEach(query -> {
             log.info("indexQuery: {}", query.toString());
@@ -41,16 +42,11 @@ public class ElasticIndexClientImpl implements ElasticIndexClient<TwitterIndexMo
         try {
             List<IndexedObjectInformation> indexedTweets = this.elasticsearchOperations.bulkIndex(indexQuery,
                     TwitterIndexModel.class);
-            return indexedTweets;
+            return indexedTweets.stream().map(IndexedObjectInformation::id).collect(Collectors.toList());
         } catch (Exception e) {
             log.error(e.getMessage());
             log.error(Arrays.toString(e.getStackTrace()));
             throw e;
         }
-
-//        log.info("indexedTweets: {}", indexedTweets.stream().map(s -> s.id()).collect(Collectors.toList()));
-//        indexedTweets.forEach(s -> {
-//            System.out.println(s.id()+" saved to db");
-//        });
     }
 }

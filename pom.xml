@@ -27,7 +27,7 @@
 	</modules>
 	<packaging>pom</packaging>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>22</java.version>
 		<mavan-compiler-plugin.version>3.13.0</mavan-compiler-plugin.version>
 		<twitter-4j.version>4.1.1</twitter-4j.version>
 		<spring-boot.version>3.3.0</spring-boot.version>
@@ -158,7 +158,7 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-				<version>3.4.4</version>
+				<version>3.5.3</version>
 			</dependency>
 			<dependency>
 				<groupId>org.elasticsearch</groupId>
@@ -180,7 +180,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${mavan-compiler-plugin.version}</version>
 				<configuration>
-					<release>11</release>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 		</plugins>
