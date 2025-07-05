@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.context.Lifecycle;
 import org.springframework.context.event.EventListener;
-import org.springframework.data.elasticsearch.core.IndexedObjectInformation;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.KafkaListenerEndpointRegistry;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -70,7 +69,6 @@ public class TwitterKafkaConsumer implements KafkaConsumer<Long, TwitterAvroMode
             log.info(message.toString());
         });
         List<String> savedData = this.elasticIndexClient.save(elasticModels);
-//        log.info("Saved data {}", savedData.toString());
 
     }
 }
