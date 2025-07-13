@@ -24,6 +24,7 @@
         <module>elastic</module>
 		<module>elastic/elastic-index-client</module>
 		<module>elastic/elastic-model</module>
+		<module>elastic/elastic-query-cleint</module>
 	</modules>
 	<packaging>pom</packaging>
 	<properties>

@@ -5,10 +5,8 @@ import com.microservice.demo.elastic.index.client.services.ElasticIndexClient;
 import com.microservice.demo.elastic.model.index.impl.TwitterIndexModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.elasticsearch.core.IndexedObjectInformation;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
